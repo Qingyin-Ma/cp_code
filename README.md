@@ -16,7 +16,7 @@ It is also expected to work on macOS, though not tested.
 
 ## Data, Programs, and Results ##
 
-### Data Source ###
+### Data source ###
 
 The only data used in the paper are interest rates and CPI from
 [FRED](https://fredaccount.stlouisfed.org). They are not stored in this archive, instead, 
@@ -27,7 +27,7 @@ enable automatic data download from [FRED](https://fredaccount.stlouisfed.org). 
 should be saved to the environment variable `FRED_API_KEY` to successfully run the file
 `code/real_rate.ipynb`.
 
-### Programs that Generates the Figures ###
+### Programs that create the figures ###
 
 | Program                          | Figure | File (folder `output/figures`) |
 |----------------------------------|--------|--------------------------------|
@@ -38,32 +38,27 @@ should be saved to the environment variable `FRED_API_KEY` to successfully run t
 | `code/irf_state.ipynb`           | 5      | `irf_state_Xpast_base.pdf`     |
 | `code/irf_demand_param.ipynb`    | 6      | `irf_demand_param.pdf`         |
 
-### Tables ###
+### Programs that create the tables ###
 
 | Program             | Table | File (folder `output/tables`)           |
 |---------------------|-------|-----------------------------------------|
 | `code/precision.py` | E.1   | `lee_nk.tex` and `lee_delta_lambda.tex` |
 
-### Other Programs ###
+### Other programs ###
 
-| Program             | Description          |
+| Program or folder   | Description          |
 |---------------------|-------|
 | `code/pricing.py` | The key optimality package (speculative channel) |
-| `code/pricing_demang.py`| The key optimality package (global demand channel) |
+| `code/pricing_demand.py`| The key optimality package (global demand channel) |
+| `code/tnr` | Computes a quadrature rule for a truncated normal distribution function | 
 
-Moreover, all files in the folder `code/tnr` comes from [John Burkardt's website](https://people.math.sc.edu/Burkardt/py_src/truncated_normal_rule/truncated_normal_rule.html), 
-and used for computing a quadrature rule for a truncated normal distribution function. 
-These files are licensed under the GNU Lesser General Public License (file `code/tnr/LICENSE`).
+All files in the folder `code/tnr` come from [John Burkardt's website](https://people.math.sc.edu/Burkardt/py_src/truncated_normal_rule/truncated_normal_rule.html), 
+and are licensed under the GNU Lesser General Public License (file `code/tnr/LICENSE`).
 
-The calculations are run in parallel using Numba. To control the number of threads
-used adjust the lines
+The calculations are executed in parallel using Numba. To control the number of threads, 
+modify the following lines in `code/pricing.py` and `code/pricing_demand.py`:
+
 ``` python
 set_num_threads(X)
 ```
-in `code/pricing.py` and `code/pricing_demand.py`. By default, Numba uses all
-available threads.
-
-## License ##
-
-Except when noted otherwise, the entirety of this repository is licensed under a
-3-Clause BSD License (file `LICENSE`), which allows reuse with attribution.
+By default, Numba uses all available threads.
