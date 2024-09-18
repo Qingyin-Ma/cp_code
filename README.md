@@ -1,6 +1,6 @@
 # Coding for "Interest Rate Dynamics and Commodity Prices"  
 
-### Authors: Christophe Gouel, Qingyin Ma, and John Stachurski 
+### Christophe Gouel, Qingyin Ma, and John Stachurski 
 
 
 The code is written in Python (version 3.10) and has been tested on Linux (Debian 12) and Windows 11. 
@@ -50,7 +50,7 @@ should be saved to the environment variable `FRED_API_KEY` to successfully run t
 |---------------------|-------|
 | `code/pricing.py` | The key optimality package (speculative channel) |
 | `code/pricing_demand.py`| The key optimality package (global demand channel) |
-| `code/tnr` | Computes a quadrature rule for a truncated normal distribution function | 
+| `code/tnr` | Computes a quadrature rule for a truncated normal distribution | 
 
 All files in the folder `code/tnr` come from [John Burkardt's website](https://people.math.sc.edu/Burkardt/py_src/truncated_normal_rule/truncated_normal_rule.html), 
 and are licensed under the GNU Lesser General Public License (file `code/tnr/LICENSE`).
